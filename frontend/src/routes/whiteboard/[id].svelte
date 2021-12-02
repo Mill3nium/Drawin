@@ -112,5 +112,6 @@
     background: white;
     border-radius: 32px;
     border: solid 1px #ccc;
+    margin-bottom: 100px;
   }
 </style>
