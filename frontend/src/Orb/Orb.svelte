@@ -19,7 +19,7 @@
 </script>
 
 <aside class:show>
-  ZGRIBLE
+  Drawin
 </aside>
 
 <style>

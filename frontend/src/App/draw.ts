@@ -7,8 +7,8 @@ const randomInt = (
       min
   );
 
-export const randomColor = (): string =>
-  `hsl(${randomInt(0, 360)}, 40%, 70%)`;
+  export const randomColor = (): string =>
+    `hsl(${randomInt(0, 360)}, 40%, 70%)`;
 
 const draw = (
   node: HTMLCanvasElement
@@ -43,8 +43,9 @@ const draw = (
       return;
     }
 
-    const color = randomColor();
-    document.body.style.background = color;
+    // const color = randomColor();
+    const color = { r: 0, b: 0, g: 0, a: 255 }
+    // document.body.style.background = `rgba(${color.r}, ${color.g}, ${color.b}, ${color.a})`;
 
     const draw = (
       x: number,
