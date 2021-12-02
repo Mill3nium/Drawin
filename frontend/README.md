@@ -1,31 +1,38 @@
-# An Orb Creations Whiteboard App
+# create-svelte
 
-Last README update: Tuesday, March 23, 2021.
+Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte);
 
-This is a whiteboard app bootstrapped with [Orb's Svelte template](https://github.orbclouds.com?id=6060212a08e440587e87d7ca&to=6060168408e440587e87d7c3) for deployment on Orb's HyperEdge. This was created as part of the [Orb Creations YouTube series](https://yt.orbclouds.com?id=6060212a08e440587e87d7ca&to=6061d2708e440587e87d7c6).
+## Creating a project
 
-This app is LIVE [here](https://app.orbclouds.com?id=6060212a08e440587e87d7ca&to=60661c5892b45e0abe0e055e).
+If you're seeing this, you've probably already done this step. Congrats!
 
-**`yarn start`** spins up a development server on `PORT 3000`.
+```bash
+# create a new project in the current directory
+npm init svelte@next
 
-**`yarn build`** builds the application for production into the `/build` directory.
+# create a new project in my-app
+npm init svelte@next my-app
+```
 
-**`yarn serve`** serves a built application locally.
+> Note: the `@next` is temporary
 
-All source code is contained in the `/src` directory.
+## Developing
 
-## Get In Touch
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
-Have a thought? Think we missed something? [Let us know!](https://www.orbclouds.com/get-in-touch?id=6060212a08e440587e87d7ca) There are also many other ways to get in touch with us:
+```bash
+npm run dev
 
-[🌐 Our Website](https://www.orbclouds.com?id=6060212a08e440587e87d7ca)
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
+```
 
-[▶️ Our YouTube](https://yt.orbclouds.com?id=6060212a08e440587e87d7ca)
+## Building
 
-[📸 Our Instagram](https://ig.orbclouds.com?id=6060212a08e440587e87d7ca)
+Before creating a production version of your app, install an [adapter](https://kit.svelte.dev/docs#adapters) for your target environment. Then:
 
-[🐦 Our Twitter](https://twitter.orbclouds.com?id=6060212a08e440587e87d7ca)
+```bash
+npm run build
+```
 
-[🇫 Our Facebook](https://fb.orbclouds.com?id=6060212a08e440587e87d7ca)
-
-[🎶 Our TikTok](https://tiktok.orbclouds.com?id=6060212a08e440587e87d7ca)
+> You can preview the built app with `npm run preview`, regardless of whether you installed an adapter. This should _not_ be used to serve your app in production.

@@ -1,10 +1,5 @@
 <script lang="ts">
-  import { GoogleAnalytics } from '@beyonk/svelte-google-analytics';
-
-  import Orb from '@app/Orb';
-
   import draw from './draw';
-  import gallery from './gallery';
 
   let canvas: HTMLCanvasElement;
 
@@ -23,41 +18,20 @@
     );
   };
 
-  const save = () => {
-    if (!canvas) return;
+  // const save = () => {
+  //   if (!canvas) return;
 
-    const href = canvas.toDataURL();
-    gallery.update((prev) => [
-      ...prev,
-      href,
-    ]);
-  };
-
-  const load = (src: string) => () => {
-    if (!canvas) return;
-
-    const ctx = canvas.getContext('2d');
-
-    if (!ctx) return;
-
-    const image = document.createElement(
-      'img'
-    );
-    image.setAttribute('src', src);
-
-    clear();
-    ctx.drawImage(image, 0, 0);
-  };
+  //   const href = canvas.toDataURL();
+  //   gallery.update((prev) => [
+  //     ...prev,
+  //     href,
+  //   ]);
+  // };
 </script>
 
-<GoogleAnalytics
-  properties={[
-    import.meta.env
-      .SNOWPACK_PUBLIC_GOOGLE_ANALYTICS_ID,
-  ]}
-/>
-
-<Orb />
+<svelte:head>
+	<title>Drawin - Whiteboard</title>
+</svelte:head>
 
 <header>
   <button
@@ -66,26 +40,12 @@
   >
     Clear
   </button>
-  <button type="button" on:click={save}>
+  <!-- <button type="button" on:click={save}>
     Save
-  </button>
+  </button> -->
 </header>
 
 <main>
-  <h2>Your artwork:</h2>
-  <div class="gallery">
-    {#each $gallery as art}
-      <button
-        class="saved"
-        on:click={load(art)}
-      >
-        <img
-          src={art}
-          alt="Oops, couldn't load!"
-        />
-      </button>
-    {/each}
-  </div>
   <canvas bind:this={canvas} use:draw />
 </main>
 

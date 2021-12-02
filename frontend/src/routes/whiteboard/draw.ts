@@ -62,8 +62,8 @@ const draw = (
         2 * Math.PI,
         false
       );
-      ctx.fillStyle = color;
-      ctx.strokeStyle = color;
+      ctx.fillStyle = `rgba(${color.r}, ${color.g}, ${color.b}, ${color.a})`;
+      ctx.strokeStyle = `rgba(${color.r}, ${color.g}, ${color.b}, ${color.a})`;
       ctx.fill();
       ctx.stroke();
     };
