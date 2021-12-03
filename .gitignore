@@ -1,2 +1,6 @@
 
 .DS_Store
+
+gateway/database.mv.db
+gateway/database.trace.db
+gateway/build

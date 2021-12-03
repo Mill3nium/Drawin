@@ -4,11 +4,11 @@ const randomInt = (
 ): number =>
   Math.floor(
     Math.random() * (max - min + 1) +
-      min
+    min
   );
 
-  export const randomColor = (): string =>
-    `hsl(${randomInt(0, 360)}, 40%, 70%)`;
+export const randomColor = (): string =>
+  `hsl(${randomInt(0, 360)}, 40%, 70%)`;
 
 const draw = (
   node: HTMLCanvasElement
@@ -69,11 +69,8 @@ const draw = (
     };
 
     draw(
-      clientX -
-        node.getBoundingClientRect()
-          .left,
-      clientY -
-        node.getBoundingClientRect().top
+      clientX - node.getBoundingClientRect().left,
+      clientY - node.getBoundingClientRect().top
     );
 
     const handlePointerMove = ({
@@ -84,12 +81,8 @@ const draw = (
       const target = currentTarget as HTMLCanvasElement;
 
       draw(
-        clientX -
-          target.getBoundingClientRect()
-            .left,
-        clientY -
-          target.getBoundingClientRect()
-            .top
+        clientX - target.getBoundingClientRect().left,
+        clientY - target.getBoundingClientRect().top
       );
     };
     const handlePointerUp = () => {

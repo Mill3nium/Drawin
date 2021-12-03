@@ -18,7 +18,7 @@
 </script>
 
 <svelte:head>
-	<title>Darwin - Start</title>
+	<title>Drawin - Start</title>
 </svelte:head>
 
 <main>
