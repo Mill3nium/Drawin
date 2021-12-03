@@ -47,25 +47,32 @@ const draw = (
     const color = { r: 0, b: 0, g: 0, a: 255 }
     // document.body.style.background = `rgba(${color.r}, ${color.g}, ${color.b}, ${color.a})`;
 
+    let prevX, prevY
     const draw = (
       x: number,
       y: number
     ): void => {
       const width = 8;
 
-      ctx.beginPath();
-      ctx.arc(
-        x,
-        y,
-        width,
-        0,
-        2 * Math.PI,
-        false
-      );
-      ctx.fillStyle = `rgba(${color.r}, ${color.g}, ${color.b}, ${color.a})`;
-      ctx.strokeStyle = `rgba(${color.r}, ${color.g}, ${color.b}, ${color.a})`;
-      ctx.fill();
-      ctx.stroke();
+      if(!prevX && !prevY) {
+        prevX = x
+        prevY = y
+      }
+
+      // https://stackoverflow.com/questions/2368784/draw-on-html5-canvas-using-a-mouse
+      ctx.beginPath(); // begin
+
+      ctx.lineWidth = width;
+      ctx.lineCap = 'round';
+      ctx.strokeStyle = `rgba(${color.r}, ${color.g}, ${color.b}, ${color.a})`
+
+      ctx.moveTo(prevX, prevY); // from
+      ctx.lineTo(x, y); // to
+
+      ctx.stroke(); // draw it!
+
+      prevX = x
+      prevY = y
     };
 
     draw(
